@@ -1,2 +1,0 @@
-# NEW-VC
-Ooooooo

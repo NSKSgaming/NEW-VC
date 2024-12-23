@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study App</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* General Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body, html { height: 100%; background-color: #ffffff; overflow-x: hidden; }
+
+        /* Logo Animation */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: #4CAF50;
+            position: fixed;
+            z-index: 9999;
+            animation: fadeOut 1.5s ease-in-out 2.5s forwards;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://i.postimg.cc/FRx0Cf9h/Picsart-24-12-23-17-15-51-010.png'); /* Replace with your logo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 50%; /* This will make the logo circular */
+            animation: scaleIn 2s ease-in-out forwards;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        /* Header */
+        header {
+            background-color: #ff2e00;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        /* NEW VECTOR CLASSES in Header */
+        .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Bala Banner (Advertisement) */
+        .bala-banner {
+            background-color: #ffcc00;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .grid-item {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-item i {
+            font-size: 2.5rem;
+            color: #ff2e00;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-item h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Advertisement Board */
+        .ad-board {
+            background-color: #ff9900;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            grid-column: span 3; /* Makes it span across all columns */
+        }
+
+        /* Footer Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            left: 0;
+            flex-direction: row; /* Ensure horizontal alignment */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff2e00;
+        }
+
+        .navbar i {
+            font-size: 1.8rem;
+            color: #ff2e00;
+        }
+
+        /* Ensure the footer stays at the bottom and content above is not overlapping */
+        .main-content {
+            padding-bottom: 70px; /* Adjust to prevent content from being hidden under the navbar */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: row; /* Row direction for medium screens */
+            }
+
+            .navbar a {
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar a {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Link Styling */
+        .hosting-docs-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff2e00;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .hosting-docs-link:hover {
+            background-color: #e60000;
+        }
+    </style>
+</head>
+<body>
+    <!-- LOGO ANIMATION -->
+    <div class="logo-container">
+        <div class="logo"></div>
+    </div>
+
+    <!-- MAIN APP CONTENT -->
+    <div class="main-content" style="display:none;">
+        <!-- Header -->
+        <header> 
+            <div class="header-title">NEW VECTOR CLASSES</div> <!-- Added the NEW VECTOR CLASSES here -->
+        </header>
+
+        <!-- Bala Banner (Advertisement) -->
+        <div class="bala-banner">
+            🎉 Enroll Now for the Best 12th Science Coaching! Special Offer: ₹1500 Only! 🎉
+        </div>
+
+        <!-- Grid Section -->
+        <section class="grid-container">
+            <!-- Advertisement Board -->
+            <div class="ad-board">
+                🚨 Special Offer: 12th Science Crash Course! 🚨
+            </div>
+
+            <!-- Paid Content (With Google Drive Links) -->
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/drive/folders/11fzrppALuu3h2qWb2Vr6HXN3frXsP-95'">
+                <i class="fas fa-book"></i>
+                <h3>Paid Course</h3>
+            </div>
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Paid Notes</h3>
+            </div>
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-edit"></i>
+                <h3>Paid Test</h3>
+            </div>
+
+            <!-- Free Content (With Google Drive Links) -->
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-book-open"></i>
+                <h3>Free Courses</h3>
+            </div>
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-file-download"></i>
+                <h3>Free Notes</h3>
+            </div>
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-pen"></i>
+                <h3>Free Test</h3>
+            </div>
+
+            <!-- NCERT Books + Existing Items -->
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-book-reader"></i>
+                <h3>NCERT Books</h3>
+            </div>
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Class Schedule</h3>
+            </div>
+            <div class="grid-item" onclick="window.location.href='https://drive.google.com/your-file-link'">
+                <i class="fas fa-share-alt"></i>
+                <h3>Social Links</h3>
+            </div>
+        </section>
+
+        <!-- Firebase Hosting Docs Link -->
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="https://firebase.google.com/docs/hosting" target="_blank" class="hosting-docs-link">Open Firebase Hosting Docs</a>
+        </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    <nav class="navbar">
+        <a href="#"><i class="fas fa-home"></i><br>Home</a>
+        <a href="#"><i class="fas fa-graduation-cap"></i><br>My Courses</a>
+        <a href="#"><i class="fas fa-download"></i><br>Downloads</a>
+        <a href="#"><i class="fas fa-comments"></i><br>Chat</a>
+    </nav>
+
+    <!-- JavaScript to Show Main Content After Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector('.main-content').style.display = "block";
+            }, 2500); // 2.5s matches animation duration
+        });
+    </script>
+</body>
+</html>
